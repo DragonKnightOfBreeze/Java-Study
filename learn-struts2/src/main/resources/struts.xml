@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<!--STEP 配置常量-->
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<!-- 指定被struts2处理的请求后缀类型。多个用逗号隔开 -->
+	<constant name="struts.action.extension" value="action,do,htm"/>
+	<!-- 当struts.xml改动后，是否重新加载。默认值为false -->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false -->
+	<constant name="struts.devMode" value="true"/>
+	<!-- 设置浏览器是否缓存静态内容。默认值为true -->
+	<constant name="struts.serve.static.browserCache" value="true"/>
+
+	<!--<package name="hellodemo" extends="struts-default" namespace="/day01">-->
+	<!--&lt;!&ndash;name：用于访问的名字 class：action类的全路径&ndash;&gt;-->
+	<!--&lt;!&ndash;访问时建议加上.action后缀名&ndash;&gt;-->
+	<!--<action name="hello" class="day01.action.HelloAction">-->
+	<!--&lt;!&ndash;根据方法的返回值，跳转到对应的页面&ndash;&gt;-->
+	<!--<result name="ok">/day01/hello.jsp</result>-->
+	<!--</action>-->
+	<!--</package>-->
+
+	<!--STEP 引入配置文件-->
+
+	<!--<include file="cwindea/test/struts2/day01/action/hello.xml"/>-->
+	<!--<include file="cwindea/test/struts2/day01/action/book.xml"/>-->
+
+	<!--<package name="day02" extends="struts-default" namespace="/day02">-->
+	<!--<action name="form4" class="windea.test.struts2.day02.action.Form4Action"/>-->
+	<!--</package>-->
+</struts>

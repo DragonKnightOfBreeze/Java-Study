@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--第一部分 配置数据库信息 必须的-->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/SSHLesson?serverTimezone=GMT%2B8
+		</property>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.username">Windea</property>
+		<property name="hibernate.connection.password">BreezesLanding</property>
+
+		<!--第二部分 配置Hibernate信息 可选的-->
+
+		<!--输出底层sql语句-->
+		<property name="hibernate.show_sql">true</property>
+		<!--格式化sql语句-->
+		<property name="hibernate.format_sql">true</property>
+		<!--有表则更新，无表则创建-->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!--配置数据库方言
+			在mysql里面实现分页关键字limit，只能用在mysql里面
+			在oracle数据库，实现分页使用rownum
+			让hibernate框架识别不同数据库的语句
+		-->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!--绑定本地线程-->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!--第三部分 引入配置文件（可用注解方式代替）-->
+
+		<!--<mapping resource="day01/domain/User.hbm.xml"/>-->
+	</session-factory>
+</hibernate-configuration>

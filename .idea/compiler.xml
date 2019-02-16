@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="learn-mybatis" />
+        <module name="learn-struts2" />
+        <module name="SpringMvcLesson" />
+        <module name="SpringMVCLesson" />
+        <module name="learn-spring" />
+        <module name="learn-springmvc" />
+        <module name="learn-hibernate" />
+        <module name="SpringLesson" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Java-Study" options="" />
+      <module name="SpringLesson" options="" />
+      <module name="SpringMvcLesson" options="" />
+      <module name="learn-mybatis" options="" />
+    </option>
+  </component>
+</project>

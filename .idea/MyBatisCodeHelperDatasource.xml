@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="activeDatabaseInfo">
+      <NewDatabaseInfo>
+        <option name="database" value="SSMLesson" />
+        <option name="databaseType" value="MySql" />
+        <option name="password" value="BreezesLanding" />
+        <option name="url" value="localhost:3306" />
+        <option name="userName" value="Windea" />
+      </NewDatabaseInfo>
+    </option>
+    <option name="databaseInfos">
+      <list>
+        <NewDatabaseInfo>
+          <option name="database" value="SSMLesson" />
+          <option name="databaseType" value="MySql" />
+          <option name="password" value="BreezesLanding" />
+          <option name="url" value="localhost:3306" />
+          <option name="userName" value="Windea" />
+        </NewDatabaseInfo>
+      </list>
+    </option>
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="generatedClassPathList">
+          <list>
+            <option value="D:\My Documents\My Projects\Java Projects\Test\SSMLesson\MyBatisLesson\src\main\java\windea\lesson\mybatis\day02\domain" />
+            <option value="D:\My Documents\My Projects\Java Projects\Test\SSMLesson\SpringMVCLesson\src\main\java\windea\lesson\springmvc\day01\domain" />
+          </list>
+        </option>
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DEPRECATED Hibernate映射配置文件-->
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.windea.study.hibernate.domain.LinkMan" table="t_linkMan">
+		<id name="id" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="name" column="name"/>
+		<property name="gender" column="gender"/>
+		<property name="phone" column="phone"/>
+
+		<!--表示联系人所属的客户
+			name：对应的实体类属性名称
+			class：客户类全路径
+			column：外键名称，要保持一致
+		-->
+		<many-to-one name="client" class="com.windea.study.hibernate.domain.Client" column="client_id"/>
+	</class>
+</hibernate-mapping>

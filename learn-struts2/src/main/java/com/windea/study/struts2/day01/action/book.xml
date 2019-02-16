@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<!--STEP 使用method属性实现-->
+
+	<!--<package name="struts2_lesson" extends="struts-default" namespace="/">-->
+	<!--<action name="openBook" class="day01.action.BookAction" method="open">-->
+	<!--<result name="open">/day01/open.jsp</result>-->
+	<!--</action>-->
+	<!--<action name="closeBook" class="day01.action.BookAction" method="close">-->
+	<!--<result name="close">/day01/close.jsp</result>-->
+	<!--</action>-->
+	<!--</package>-->
+
+	<!--STEP 使用通配符实现-->
+
+	<package name="struts2_lesson" extends="struts-default" namespace="/day01">
+		<action name="*Book" class="com.windea.study.struts2.day01.action.BookAction" method="{1}">
+			<result name="open">/day01/open.jsp</result>
+			<result name="close">/day01/close.jsp</result>
+		</action>
+	</package>
+</struts>

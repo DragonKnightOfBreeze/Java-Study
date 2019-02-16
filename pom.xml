@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<groupId>com.windea</groupId>
+	<artifactId>java-study</artifactId>
+	<version>1.0.0</version>
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+
+	<name>Java Study</name>
+	<description>Java知识点学习</description>
+	<url>https://github.com/DragonKnightOfBreeze/Java-Study</url>
+
+	<scm>
+		<connection>scm:git@github.com:DragonKnightOfBreeze/Java-Study.git</connection>
+		<developerConnection>scm:git@github.com:DragonKnightOfBreeze/Java-Study.git</developerConnection>
+		<url>git@github.com:DragonKnightOfBreeze/Java-Study.git</url>
+	</scm>
+
+	<build>
+		<plugins>
+			<!--WARN 使用先行版本，无法识别WebApplicationInitializer！！！-->
+			<!--<plugin>-->
+			<!--	<groupId>org.apache.maven.plugins</groupId>-->
+			<!--	<artifactId>maven-compiler-plugin</artifactId>-->
+			<!--	<version>3.1</version>-->
+			<!--	<configuration>-->
+			<!--		<source>12</source>-->
+			<!--		<target>12</target>-->
+			<!--		<compilerArgs>-->
+			<!--			<arg>&#45;&#45;enable-preview</arg>-->
+			<!--		</compilerArgs>-->
+			<!--	</configuration>-->
+			<!--</plugin>-->
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<docencoding>UTF-8</docencoding>
+					<doclint>none</doclint>
+				</configuration>
+			</plugin>-->
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>-->
+		</plugins>
+	</build>
+
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+
+	<modules>
+		<module>learn-springmvc</module>
+		<module>learn-spring</module>
+		<module>learn-mybatis</module>
+		<module>learn-hibernate</module>
+		<module>learn-struts2</module>
+	</modules>
+
+	<dependencies>
+		<!--基本依赖-->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.11.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>16.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!--数据库连接-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.3</version>
+		</dependency>
+
+		<!--JUnit-->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.4.0-RC1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!--CITE 自定义依赖-->
+		<dependency>
+			<groupId>com.windea</groupId>
+			<artifactId>java-utility-base</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.windea</groupId>
+			<artifactId>java-utility-extra</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

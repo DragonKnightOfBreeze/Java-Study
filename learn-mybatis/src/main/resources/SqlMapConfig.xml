@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--<properties url="database.properties">-->
+	<!--<property name="n" value="v"/>-->
+	<!--</properties>-->
+
+	<settings>
+		<!--启用延迟加载-->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!--让延迟加载的对象任何延迟属性全部加载，按需加载-->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!--开启二级缓存，默认是开启的-->
+		<!--<setting name="cacheEnabled" value="true"/>-->
+	</settings>
+
+	<!--<typeAliases>-->
+	<!--单个别名：-->
+	<!--<typeAlias type="windea.lesson.mybatis.day01.domain.User" alias="User"/>-->
+	<!--批量别名：指定包名，自动扫描，自动定义别名（将类的首字母大写或小写）-->
+	<!--<package name="windea.lesson.mybatis.day01.domain"/>-->
+	<!--<package name="windea.lesson.mybatis.day02.domain"/>-->
+	<!--</typeAliases>-->
+
+	<!--<typeHandlers>-->
+	<!--<typeHandler handler="" javaType="" jdbcType=""/>-->
+	<!--</typeHandlers>-->
+
+	<!--NOTE 和Spring整合后，这些配置将被废除-->
+	<environments default="development">
+		<environment id="development">
+			<!--使用jdbc事务管理，事务控制由MyBatis管理-->
+			<transactionManager type="JDBC"/>
+			<!--数据库连接池，由MyBatis管理-->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/SSMLesson?serverTimezone=GMT%2B8"/>
+				<property name="username" value="Windea"/>
+				<property name="password" value="BreezesLanding"/>
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!--加载映射文件-->
+	<mappers>
+		<mapper resource="windea/lesson/mybatis/day01/sqlmap/User.xml"/>
+		<package name="windea.lesson.mybatis.day01.mapper"/>
+		<package name="windea.lesson.mybatis.day02.mapper"/>
+	</mappers>
+</configuration>

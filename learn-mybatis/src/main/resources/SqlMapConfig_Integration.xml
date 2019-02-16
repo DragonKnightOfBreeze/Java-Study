@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!--启用延迟加载-->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!--让延迟加载的对象任何延迟属性全部加载，按需加载-->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!--开启二级缓存，默认是开启的-->
+		<!--<setting name="cacheEnabled" value="true"/>-->
+	</settings>
+
+	<!--加载映射文件-->
+	<mappers>
+		<mapper resource="windea/lesson/mybatis/integration/sqlmap/User.xml"/>
+		<package name="windea.lesson.mybatis.integration.mapper"/>
+	</mappers>
+</configuration>
