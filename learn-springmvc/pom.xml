@@ -11,7 +11,11 @@
 	<artifactId>learn-springmvc</artifactId>
 
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>learn-springmvc-main</module>
+	</modules>
 
 	<name>Learn SpringMVC</name>
 	<description>SpringMVC框架学习</description>

@@ -10,7 +10,11 @@
 	<artifactId>learn-hibernate</artifactId>
 
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>learn-hibernate-main</module>
+	</modules>
 
 	<name>Learn Hibernate</name>
 	<description>Hibernate框架学习</description>
@@ -21,6 +25,7 @@
 	</properties>
 
 	<dependencies>
+		<!--Hibernate-->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>

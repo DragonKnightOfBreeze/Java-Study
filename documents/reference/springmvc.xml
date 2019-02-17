@@ -9,7 +9,7 @@
                            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 	<!-- 在这里配置基包扫描,主要是我们需要映射的handler -->
-	<!--<context:component-scan base-package="windea.lesson.springmvc.controller"/>-->
+	<!--<context:component-scan base-package="com.windea.study.springmvc.main.controller"/>-->
 
 	<mvc:annotation-driven conversion-service="conversionService"/>
 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">

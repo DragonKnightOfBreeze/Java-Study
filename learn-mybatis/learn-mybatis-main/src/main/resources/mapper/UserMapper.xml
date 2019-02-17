@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.windea.study.mybatis.day02.com.windea.study.spring.demo.ssm.mapper.UserMapper">
+	<!--
+		开启本mapper的namespace下面的二级缓存
+		整合ehcache
+	-->
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+
+	<select id="findUserById" parameterType="int" resultType="com.windea.study.mybatis.day01.domain.User">
+		select * from User where id = #{id}
+	</select>
+
+
+	<!--查询用户以及用户所购买的商品信息的resultMap-->
+	<resultMap id="userInDetailResultMap" type="com.windea.study.mybatis.day02.domain.M2M_User">
+		<id property="id" column="u_id"/>
+		<result property="username" column="u_username"/>
+		<result property="birthday" column="u_birthday"/>
+		<result property="sex" column="u_sex"/>
+		<result property="address" column="u_address"/>
+		<collection property="orderList" ofType="com.windea.study.mybatis.day02.domain.M2M_Order">
+			<id property="id" column="o_id"/>
+			<result property="createTime" column="o_createTime"/>
+			<result property="note" column="o_note"/>
+			<result property="number" column="o_number"/>
+			<collection property="orderDetailList" ofType="com.windea.study.mybatis.day02.domain.M2M_OrderDetail">
+				<id property="id" column="od_id"/>
+				<id property="itemCount" column="od_itemCount"/>
+				<association property="item" javaType="com.windea.study.mybatis.day02.domain.M2M_Item">
+					<id property="id" column="i_id"/>
+					<result property="createTime" column="i_createTime"/>
+					<result property="detail" column="i_detail"/>
+					<result property="imageUrl" column="i_imageUrl"/>
+					<result property="name" column="i_name"/>
+					<result property="price" column="i_price"/>
+				</association>
+			</collection>
+		</collection>
+	</resultMap>
+
+	<!--查询用户以及用户所购买的商品信息-->
+	<select id="findUserInDetail" resultMap="userInDetailResultMap">
+		select u.id u_id, u.username u_username, u.birthday u_birthday, u.sex u_sex, u.address u_address,
+		       o.id o_id, o.number o_number, o.createTime o_createTime, o.note o_note,
+		       od.id od_id, od.itemCount od_itemCount,
+		       i.id i_id, i.name i_name, i.price i_price, i.detail i_detail, i.imageUrl i_imageUrl,
+		       i.createTime i_createTime
+		from User u, `Order` o, OrderDetail od, Item i
+		where o.userId = u.id
+		  and o.id = od.orderId
+		  and od.itemId = i.id
+		order by u.id, o.id, od.id, i.id;
+	</select>
+</mapper>

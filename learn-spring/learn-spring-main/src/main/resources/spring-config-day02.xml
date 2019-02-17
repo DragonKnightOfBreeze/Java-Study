@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--开启注解扫描，如果有多个包，一种方法是在属性值里面用逗号隔离，一种方法是写上一级包名-->
+	<context:component-scan base-package="windea.test.spring.day02"/>
+
+	<!--只会扫描属性上面的注解-->
+	<!--<context:annotation-config/>-->
+
+
+	<!--混合使用注解和配置文件-->
+
+	<bean id="bookDao" class="com.windea.study.spring.main.day02.bean.BookDao"/>
+	<bean id="bookService" class="com.windea.study.spring.main.day02.bean.BookService"/>
+	<bean id="orderDao" class="com.windea.study.spring.main.day02.bean.OrderDao"/>
+</beans>

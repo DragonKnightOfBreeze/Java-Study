@@ -11,7 +11,11 @@
 	<artifactId>learn-mybatis</artifactId>
 
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>learn-mybatis-main</module>
+	</modules>
 
 	<name>Learn MyBatis</name>
 	<description>MyBatis框架学习</description>

@@ -415,7 +415,7 @@ mapper、service、controller都是JavaBean。
 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="converters">
 			<list>
-				<bean class="windea.lesson.springmvc.CustomDateConverter"/>
+				<bean class="com.windea.study.springmvc.main.CustomDateConverter"/>
 			</list>
 		</property>
 	</bean>
