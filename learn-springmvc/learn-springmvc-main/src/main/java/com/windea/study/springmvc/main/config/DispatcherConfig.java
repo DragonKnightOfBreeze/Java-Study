@@ -67,7 +67,6 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 		viewResolver.setViewClass(JstlView.class);
 		//让Spring的所有bean都能支持jstl和el
 		viewResolver.setExposeContextBeansAsAttributes(true);
-
 		//配置jsp路径的前缀和后缀（同时需要调整viewName）
 		viewResolver.setPrefix("/WEB-INF/pages");
 		//viewResolver.setSuffix(".jsp");
@@ -102,7 +101,7 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 	 * 全局异常处理器的bean。
 	 */
 	@Bean
-	public AppHandlerExceptionResolver AppHandlerExceptionResolver() {
+	public AppHandlerExceptionResolver appHandlerExceptionResolver() {
 		return new AppHandlerExceptionResolver();
 	}
 
@@ -137,7 +136,6 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 	 */
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
-		var viewResolver = new InternalResourceViewResolver();
 		registry.viewResolver(viewResolver());
 	}
 
@@ -161,8 +159,8 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 	 * 配置自定义异常处理器。
 	 */
 	@Override
-	public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
-		resolvers.add(handlerExceptionResolver());
+	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+		resolvers.add(appHandlerExceptionResolver());
 	}
 
 	/**

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--使IDEA能够识别外部变量-->
+<!--/*@thymesVar id="animal" type="com.windea.study.thymeleaf.demo.base.domain.Animal"*/-->
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<title>编辑动物信息</title>
+</head>
+
+<body>
+	<a th:href="@{/index}">首页</a>->
+	<a th:href="@{/animal}">动物</a>->
+	<a th:href="@{/animal/{id}(id=${animal.id})}">动物信息</a>->
+	<a th:href="@{/animal/{id}/edit(id=${animal.id})}">编辑</a>
+
+	<hr>
+
+	<!--STEP 编辑动物信息-->
+	<form th:action="@{/animal(operation='updateById')}" method="post">
+		<input type="hidden" name="id" th:value="${animal.id}"/>
+		<table border="1">
+			<thead>
+			<tr>
+				<th>序号</th>
+				<th>动物名称</th>
+				<th>数量</th>
+				<th>备注</th>
+				<th>操作</th>
+			</tr>
+			</thead>
+			<tbody th:remove="all-but-first">
+			<!--遍历model属性 animalList中的每个元素-->
+			<tr>
+				<td><input type="text" th:value="${animal.id}" disabled/></td>
+				<td><input type="text" name="name" th:value="${animal.name}"/></td>
+				<td><input type="text" name="count" th:value="${animal.count}"/></td>
+				<td><input type="text" name="memo" th:value="${animal.memo}"/></td>
+				<td><input type="submit" value="更新"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--使IDEA能够识别外部变量-->
+<!--/*@thymesVar id="message" type="java.lang.String"*/-->
+<!--/*@thymesVar id="animal" type="com.windea.study.thymeleaf.demo.base.domain.Animal"*/-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>插入动物信息的页面</title>
+</head>
+<body>
+	<!--声明一个页面片段-->
+	<div th:fragment="insertForm">
+		<!--STEP 添加动物信息-->
+		<!--显示验证信息-->
+		<br>
+		<div th:text="${message}">这里是信息提示.</div>
+		<br>
+		<!--使用th:errors标签，可以直接根据指定的实体类属性名，显示对应的validate注解上配置的错误提示信息-->
+		<div th:errors="${animal.name}"></div>
+		<div th:errors="${animal.count}"></div>
+		<div th:errors="${animal.memo}"></div>
+		<br>
+
+		<!--输入表单-->
+		<!--跳转到/list.action，传递请求参数save，另外还向控制器传递一个请求参数 animal-->
+		<!--使用@{}来引用链接，括号里面是参数，以/开头表示相对于applicationContext，以~/开头表示相对于服务器地址-->
+		<!--使用th:object标签，可以在子标签中通过*{}直接引用该对象的属性，也可以和其他方式混合使用-->
+		<!--NOTE 在表单中使用th:object标签时，${}中的实体类变量如果为null，则在引用它的属性时会报错-->
+		<!--NOTE 其他类似的标签可能也存在这个问题，最好往model里面添加直接实例化出来的对象-->
+		<form method="post" th:action="@{/animal(operation='insertIfValid')}" th:object="${animal}">
+			<table border="1">
+				<tr>
+					<th><label for="name">动物名称</label></th>
+					<th><label for="count">数量</label></th>
+					<th><label for="memo">备注</label></th>
+					<th><label for="submit">操作</label></th>
+				</tr>
+				<tr>
+					<td><input id="name" name="name" th:value="*{name}" type="text"/></td>
+					<td><input id="count" name="count" th:value="*{count}" type="text"/></td>
+					<td><input id="memo" name="memo" th:value="*{memo}" type="text"/></td>
+					<td><input id="submit" type="submit" value="添加"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

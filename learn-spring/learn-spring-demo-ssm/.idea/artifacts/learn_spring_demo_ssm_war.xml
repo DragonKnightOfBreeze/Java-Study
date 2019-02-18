@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="learn-spring-demo-ssm:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>learn-spring-demo-ssm</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="learn-spring-demo-ssm-1.0.0.war">
+      <element id="artifact" artifact-name="learn-spring-demo-ssm:war exploded" />
+    </root>
+  </artifact>
+</component>

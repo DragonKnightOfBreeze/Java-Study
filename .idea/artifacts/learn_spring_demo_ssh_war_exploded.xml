@@ -28,10 +28,10 @@
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.8.1" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-convention-plugin:2.5.20" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.2" />
           <element id="library" level="project" name="Maven: org.ow2.asm:asm-commons:5.2" />
           <element id="library" level="project" name="Maven: org.ow2.asm:asm-tree:5.2" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-json-plugin:2.5.20" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:7.0" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.0.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
           <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />

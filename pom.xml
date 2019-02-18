@@ -15,6 +15,7 @@
 		<module>learn-mybatis</module>
 		<module>learn-hibernate</module>
 		<module>learn-struts2</module>
+		<module>learn-thymeleaf</module>
 	</modules>
 
 	<name>Java Study</name>

@@ -55,7 +55,8 @@ public class Application extends AbstractAnnotationConfigDispatcherServletInitia
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[]{"*.action", "/"};
+		//NOTE 可以是`*.action`、`/`，不能是`/*`
+		return new String[]{"/"};
 	}
 
 	@Override

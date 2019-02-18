@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DEPRECATED Hibernate映射配置文件-->
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!--配置实体类~数据库表映射关系
+		name：实体类名 table：数据库表名-->
+	<class name="com.windea.study.hibernate.main.domain.User" table="t_user">
+		<!--配置实体类属性~表列映射关系
+			name：实体类属性名 column：表列名-->
+
+		<!--配置数据库表主键，以及生成策略
+			native：自动增长-->
+		<id name="id" column="id">
+			<generator class="native"/>
+		</id>
+		<!--配置其他属性和数据库列-->
+		<property name="userName" column="userName"/>
+		<property name="password" column="password"/>
+		<property name="address" column="address"/>
+	</class>
+</hibernate-mapping>

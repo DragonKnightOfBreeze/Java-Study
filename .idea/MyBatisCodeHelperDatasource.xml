@@ -23,6 +23,11 @@
     </option>
     <option name="projectProfile">
       <ProjectProfile>
+        <option name="genJavaMapperPath" value="$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/src/main/java/com/windea/study/thymeleaf/demo/base/mapper" />
+        <option name="genMapperXmlPath" value="$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/resources/main/java/com/windea/study/thymeleaf/demo/base/mapper" />
+        <option name="genServiceInterfacePath" value="$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/src/main/java/com/windea/study/thymeleaf/demo/base/service" />
+        <option name="genServicePath" value="$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/src/main/java/com/windea/study/thymeleaf/demo/base/service" />
+        <option name="genSqlFilePath" value="$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/src/main/java/com/windea/study/thymeleaf/demo/base/domain" />
         <option name="generatedClassPathList">
           <list>
             <option value="D:\My Documents\My Projects\Java Projects\Test\SSMLesson\MyBatisLesson\src\main\java\windea\lesson\mybatis\day02\domain" />

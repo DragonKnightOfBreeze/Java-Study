@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--使IDEA能够识别外部变量-->
+<!--/*@thymesVar id="message" type="java.lang.String"*/-->
+<!--/*@thymesVar id="animal" type="com.windea.study.thymeleaf.demo.base.domain.Animal"*/-->
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<title>动物信息</title>
+</head>
+
+<body>
+	<a th:href="@{/index}">首页</a>->
+	<a th:href="@{/animal}">动物</a>->
+	<a th:href="@{/animal/{id}(id=${animal.id})}">动物信息</a>
+
+	<hr>
+
+	<!--STEP 动物信息-->
+	<table border="1">
+		<thead>
+		<tr>
+			<th>序号</th>
+			<th>动物名称</th>
+			<th>数量</th>
+			<th>备注</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody th:remove="all-but-first">
+		<!--遍历model属性 animalList中的每个元素-->
+		<tr>
+			<td th:text="${animal.id}">...</td>
+			<td th:text="${animal.name}">...</td>
+			<td th:text="${animal.count}">...</td>
+			<td th:text="${animal.memo}">...</td>
+		</tr>
+		<!--使用th:remove标签，让以下内容仅用于展示-->
+		<tr>
+			<td>1</td>
+			<td>大马猴</td>
+			<td>10</td>
+			<td>机灵古怪，俏皮活泼</td>
+			<td><a onclick="history.back()">返回</a></td>
+		</tr>
+		</tbody>
+	</table>
+</body>
+</html>

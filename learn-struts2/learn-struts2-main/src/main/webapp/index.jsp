@@ -7,6 +7,6 @@
 </head>
 <body>
 	<h1>Welcome</h1>
-	<p><c:url value="day02/form.jsp"/>Click</p>
+	<p><a href="<c:url value="/day02/form.jsp"/>">Click</a></p>
 </body>
 </html>

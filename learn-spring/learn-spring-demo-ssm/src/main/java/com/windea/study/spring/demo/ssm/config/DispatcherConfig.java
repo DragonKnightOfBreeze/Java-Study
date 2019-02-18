@@ -128,8 +128,8 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 	 * 配置自定义异常处理器。
 	 */
 	@Override
-	public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
-		resolvers.add(handlerExceptionResolver());
+	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+		resolvers.add(appHandlerExceptionResolver());
 	}
 
 

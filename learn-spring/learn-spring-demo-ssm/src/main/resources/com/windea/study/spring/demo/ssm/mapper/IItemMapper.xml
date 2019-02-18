@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.windea.study.spring.demo.ssm.com.windea.study.springmvc.main.mapper.IItemMapper">
+
+	<sql id="Base_Column_List">
+			id,
+			name,
+			price,
+			detail,
+			imageUrl,
+			createTime
+	</sql>
+
+	<resultMap id="BaseResultMap" type="com.windea.study.spring.demo.ssm.domain.Item">
+		<result column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="price" property="price"/>
+		<result column="detail" property="detail"/>
+		<result column="imageUrl" property="imageUrl"/>
+		<result column="createTime" property="createTime"/>
+	</resultMap>
+
+
+	<insert id="insert" parameterType="com.windea.study.spring.demo.ssm.domain.Item">
+		insert into Item
+		set name=#{name}, price=#{price}, detail=#{detail}, imageUrl=#{imageUrl}, createTime=#{createTime}
+	</insert>
+
+	<delete id="deleteById">
+		delete
+		from Item
+		where id = #{id}
+	</delete>
+
+	<select id="findById" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from Item
+		where id=#{id}
+	</select>
+
+	<select id="findAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from Item
+	</select>
+
+	<select id="findByConditions" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from Item
+		where 1=1
+		<if test="item.name != null and item.name != ''">
+			and `name` like concat('%',#{item.name},'%')
+		</if>
+		<if test="minPrice != null and maxPrice != null">
+			and price between #{minPrice} and #{maxPrice}
+		</if>
+		<if test="createFrom != null">
+			and createTime >= #{createFrom}
+		</if>
+	</select>
+
+	<update id="updateById">
+		update Item
+		set `name`=#{name}, price=#{price}, detail=#{detail}, imageUrl=#{imageUrl}, createTime=#{createTime}
+		where id = #{id}
+	</update>
+</mapper>

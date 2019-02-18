@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--使IDEA能够识别外部变量-->
+<!--/*@thymesVar id="message" type="java.lang.String"*/-->
+<!--/*@thymesVar id="animal" type="com.windea.study.thymeleaf.demo.base.domain.Animal"*/-->
+<!--/*@thymesVar id="animalList" type="java.util.List<com.windea.study.thymeleaf.demo.base.domain.Animal>"*/-->
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<title>动物信息</title>
+</head>
+
+<body>
+	<a th:href="@{/index}">首页</a>->
+	<a th:href="@{/animal}">动物</a>->
+	<a th:href="@{/animal/list}">动物信息列表</a>
+
+	<hr>
+
+	<!--插入页面片段（这个标签只是用来标记，在插入后会被页面片段的顶级标签所替代）-->
+	<div th:replace="/animal/_insertFormPage.html::insertForm"></div>
+
+	<hr>
+
+	<!--STEP 动物信息列表-->
+	<table border="1">
+		<thead>
+		<tr>
+			<th>序号</th>
+			<th>动物名称</th>
+			<th>数量</th>
+			<th>备注</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody th:remove="all-but-first">
+		<!--遍历model属性 animalList中的每个元素-->
+		<tr th:each="elem:${animalList}">
+			<td class="_id" th:text="${elem.id}">...</td>
+			<td th:text="${elem.name}">...</td>
+			<td th:text="${elem.count}">...</td>
+			<td th:text="${elem.memo}">...</td>
+			<td>
+				<a th:href="@{/animal/{id}(id=${elem.id})}">详情</a>
+				<a th:href="@{/animal/{id}/edit(id=${elem.id})}">更新</a>
+				<a th:href="@{/animal(operation='deleteById',id=${elem.id})}">删除</a>
+			</td>
+		</tr>
+
+		<!--使用th:remove标签，让以下内容仅用于展示-->
+		<tr>
+			<td>1</td>
+			<td>大马猴</td>
+			<td>10</td>
+			<td>机灵古怪，俏皮活泼</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>大熊猫</td>
+			<td>80</td>
+			<td>体型笨重，喜欢吃竹子</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>澳洲羊驼</td>
+			<td>13</td>
+			<td>长相奇特，大国人俗称其草泥马</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>峨眉山猴</td>
+			<td>90</td>
+			<td>不怕人，有时候发贱抢游客面包吃</td>
+		</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/learn-spring/learn-spring-demo-ssh/src/main/webapp" value="file://$PROJECT_DIR$/learn-spring/learn-spring-demo-ssh/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/learn-spring/learn-spring-demo-ssm/src/main/webapp" value="file://$PROJECT_DIR$/learn-spring/learn-spring-demo-ssm/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/learn-springmvc/learn-springmvc-main/src/main/webapp" value="file://$PROJECT_DIR$/learn-springmvc/learn-springmvc-main/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/learn-struts2/learn-struts2-main/src/main/webapp" value="file://$PROJECT_DIR$/learn-struts2/learn-struts2-main/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/src/main/webapp" value="file://$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base/src/main/webapp" />
+      </map>
+    </option>
+  </component>
+</project>
