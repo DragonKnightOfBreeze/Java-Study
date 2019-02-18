@@ -3,10 +3,12 @@
 整理自：  
 [【 分类 】- thymeleaf - 水手008的博客（随心而谈） - CSDN博客](https://blog.csdn.net/asd_op/article/category/6525212)
 
-# 说明
+# TODO
 
-* 包含参数验证的例子
-* restful格式的链接
+* [X] 包含参数验证的例子
+* [X] restful格式的链接
+* [X] 包括完整的增删查改操作的综合例子
+* [ ] 使用了javascript、jquery、ajax和json的综合例子
 
 # 问题解决
 

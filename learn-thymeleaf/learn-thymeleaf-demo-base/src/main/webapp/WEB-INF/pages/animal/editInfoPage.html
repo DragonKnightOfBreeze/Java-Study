@@ -10,6 +10,7 @@
 <body>
 	<a th:href="@{/index}">首页</a>->
 	<a th:href="@{/animal}">动物</a>->
+	<!--通过`{paramName}`的格式来引用要传递到controller中的参数，即是后面括号中的参数，类似@PathVariable：-->
 	<a th:href="@{/animal/{id}(id=${animal.id})}">动物信息</a>->
 	<a th:href="@{/animal/{id}/edit(id=${animal.id})}">编辑</a>
 

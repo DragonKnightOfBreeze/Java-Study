@@ -129,7 +129,13 @@ main.helloTo = Hello {0}!
 `<a href="/myapp/order/list;jsessionid=s2ds3fa31abd241e2a01932">...</a>`
 
 网址也可以带参数，如下所示:
+`<a th:href="@{/order/details(update)}">...</a>`
+  
+也可以这样：  
 `<a th:href="@{/order/details(id=${orderId},type=${orderType})}">...</a>`
+
+也可以通过`{paramName}`的格式来引用要传递到controller中的参数，即是后面括号中的参数，类似@PathVariable：
+`<a th:href="@{/order/{id}/details(id=${orderId},type=${orderType})}">...</a>`
 
 这将产生类似以下的结果：
 （注意＆符号会在标签属性中进行HTML转义...）
