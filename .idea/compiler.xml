@@ -7,15 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="learn-spring-demo-ssh" />
-        <module name="learn-spring-main" />
+        <module name="learn-mybatis-main" />
         <module name="learn-struts2-main" />
+        <module name="learn-springboot-main" />
+        <module name="learn-spring-statemachine-main" />
         <module name="learn-thymeleaf-demo-base" />
         <module name="SpringMvcLesson" />
         <module name="SpringMVCLesson" />
         <module name="learn-spring-demo-ssm" />
         <module name="learn-springmvc-main" />
         <module name="learn-hibernate-main" />
-        <module name="learn-mybatis-main" />
+        <module name="learn-spring-main" />
         <module name="SpringLesson" />
       </profile>
     </annotationProcessing>
@@ -26,6 +28,9 @@
       <module name="SpringLesson" options="" />
       <module name="SpringMvcLesson" options="" />
       <module name="learn-mybatis" options="" />
+      <module name="learn-spring-statemachine-main" options="-parameters" />
+      <module name="learn-springboot" options="-parameters" />
+      <module name="learn-springboot-main" options="-parameters" />
     </option>
   </component>
 </project>

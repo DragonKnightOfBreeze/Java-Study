@@ -210,7 +210,7 @@ mvc在b/s系统下的应用：
 * 重点：通过入门程序理解SpringMVC前端控制器、处理器控制器、处理器适配器、视图解析器的用法。
 * 前端控制器配置
 	* 第一种：`*.action`
-	* 第二种：`\`
+	* 第二种：`\ `
 * 处理器映射器
 	* （了解）非注解的处理器映射器
 	* （掌握）注解的处理器映射器：对注有`@Controller`的类中注有`@RequestMapping`的方法进行映射。
@@ -381,9 +381,9 @@ mapper、service、controller都是JavaBean。
 
 * 加上简单类型/简单类型封装类类型的参数，即可得到传入数据。  
 * 传入数据和参数的名字默认需要相同。
-* `@@RequestParam`
+* `@RequestParam`
 	* 用于处理简单类型的绑定。
-	* 如果不使用这个注解，则要求同名。如果不使用，则可以不同名。
+	* 如果不使用这个注解，则要求同名。如果使用，则可以不同名。
 	* value属性：传入的请求参数的名称。默认同名。
 	* required属性：是否必须，默认为true。
 	* defaultValue属性：设置默认值。
@@ -655,7 +655,7 @@ Item.name.NotNull.error = 请输入合法的日期
 
 * 方法1
 	* SpringMVC默认对标准键名的实体类数据进行回显。
-	`* 实体类数据传入controller方法中，SpringMVC自动将数据放到request域，key等于pojo类型（首字母小写）。
+	* 实体类数据传入controller方法中，SpringMVC自动将数据放到request域，key等于pojo类型（首字母小写）。
 * 方法2
 	* 使用`@ModelAttribute`可以指定将实体类数据回显到request中的key。
 * 方法3
@@ -711,14 +711,14 @@ SpringMVC提供全局异常处理器进行处理（一个系统只有一个）�
 
 ### SpringMVC对多部件类型的解析
 
-在页面中提交`enctype="multipart/form-data"`的数据时，需要### SpringMVC对multipart类型的数据进行解析。
+在页面中提交`enctype="multipart/form-data"`的数据时，需要SpringMVC对multipart类型的数据进行解析。
 
 ### 创建图片的虚拟目录
 
 * 可以是在本地，也可以是在远程，也可以是在web根目录下。
 * 本地方式
 	* 在tomcat的配置文件（`conf/server.xml`）中，进行如下配置：
-	* `<COntext docBase=""D:\temp"` path="/image" reloadable="false"/>`
+	* `<context docBase=""D:\temp"` path="/image" reloadable="false"/>`
 * 注意
 	* 在图片虚拟路径中，一定要讲图片目录分级创建。以便提高io性能。
 
@@ -777,7 +777,7 @@ SpringMVC默认使用MappingJacksonHttpMessageConverter对json数据进行转换
     * **注意：尽量指定泛型**
 * 将json对象字符串，转化为java映射，返回js对象
 	* 数据传递：`data: '{"name": "Iphone", "price": 123}'`
-    * 数据接收：`public @ResponseBody Map<String,Object> requestJson(@RequestBody Map<String,Object> item)`
+    * 数据接收：`@ResponseBody public Map<String,Object> requestJson(@RequestBody Map<String,Object> item)`
     * 数据返回：data，类型：Object，属性：name:"Iphone",price:123
     * **注意：尽量指定泛型**
 
@@ -800,7 +800,7 @@ Representational State Transfer，表现层状态转化
 
 * 对url进行规范，协程RESTful格式的url。
 	* 非REST的url：`http://.../queryItems.action?id=001`
-	* REST的url：`http://.../item/001
+	* REST的url：`http://.../item/001`
 	* 特点，url简洁，将参数通过url传到服务端。
 * 不管是删除、添加、更新，使用的url都是一致的，如果要进行删除，需要设置方法为DELETE。
 * 后台controller方法：判断http方法，POST则添加，DELETE则删除。
