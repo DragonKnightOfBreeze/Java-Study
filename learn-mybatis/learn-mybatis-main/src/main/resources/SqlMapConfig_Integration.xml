@@ -13,7 +13,7 @@
 
 	<!--加载映射文件-->
 	<mappers>
-		<mapper resource="windea/lesson/mybatis/integration/sqlmap/User.xml"/>
-		<package name="windea.lesson.mybatis.integration.mapper"/>
+		<mapper resource="com/windea/study/mybatis/main/integration/mapper/UserMapper.xml"/>
+		<package name="com.windea.study.mybatis.main.integration.mapper"/>
 	</mappers>
 </configuration>

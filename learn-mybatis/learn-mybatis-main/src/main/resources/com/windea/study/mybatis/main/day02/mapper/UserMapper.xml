@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.windea.study.mybatis.main.day02.com.windea.study.springmvc.main.mapper.UserMapper">
+<mapper namespace="com.windea.study.mybatis.main.day02.mapper.UserMapper">
 	<!--
 		开启本mapper的namespace下面的二级缓存
 		整合ehcache
@@ -28,7 +28,7 @@
 			<result property="number" column="o_number"/>
 			<collection property="orderDetailList" ofType="com.windea.study.mybatis.main.day02.domain.M2M_OrderDetail">
 				<id property="id" column="od_id"/>
-				<id property="itemCount" column="od_itemCount"/>
+				<result property="itemCount" column="od_itemCount"/>
 				<association property="item" javaType="com.windea.study.mybatis.main.day02.domain.M2M_Item">
 					<id property="id" column="i_id"/>
 					<result property="createTime" column="i_createTime"/>

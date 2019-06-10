@@ -3,12 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>learn-springboot</artifactId>
+    <artifactId>java-study</artifactId>
     <groupId>com.windea</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
+  <modules>
+    <module>learn-scala-main</module>
+  </modules>
 
-  <artifactId>learn-springboot-main</artifactId>
+  <artifactId>learn-scala</artifactId>
 </project>

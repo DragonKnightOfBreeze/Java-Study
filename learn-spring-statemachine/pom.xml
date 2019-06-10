@@ -2,32 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <groupId>com.windea</groupId>
-  <artifactId>learn-spring-statemachine</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
-  <modules>
-    <module>learn-spring-statemachine-main</module>
-  </modules>
-
-
-  <modelVersion>4.0.0</modelVersion>
-  <packaging>pom</packaging>
-
-  <name>Learn Spring State Machine</name>
-  <description>Spring State Machine学习</description>
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.1.3.RELEASE</version>
     <relativePath/>
   </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+
+  <groupId>com.windea</groupId>
+  <artifactId>learn-spring-statemachine</artifactId>
+  <version>1.0.0</version>
+
+  <modules>
+    <module>learn-spring-statemachine-main</module>
+  </modules>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>11</java.version>
     <spring-statemachine.version>2.1.2.BUILD-SNAPSHOT</spring-statemachine.version>
   </properties>
 
@@ -36,7 +28,6 @@
       <groupId>org.springframework.statemachine</groupId>
       <artifactId>spring-statemachine-starter</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>

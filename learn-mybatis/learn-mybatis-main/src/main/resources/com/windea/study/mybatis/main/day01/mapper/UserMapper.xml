@@ -3,7 +3,7 @@
 <!--如果使用mapper代理方法开发，namespace有特殊的重要的作用-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.windea.study.mybatis.main.day01.com.windea.study.springmvc.main.mapper.UserMapper">
+<mapper namespace="com.windea.study.mybatis.main.day01.mapper.UserMapper">
 	<!--在映射文件中配置很多sql语句-->
 	<!--通过select执行数据库查询-->
 	<!--
@@ -25,7 +25,7 @@
 		${value}:接收输入参数的内容，如果是简单类型，其中只能使用value
 	-->
 	<select id="findUserByUsername" parameterType="string" resultType="com.windea.study.mybatis.main.day01.domain.User">
-		select * from User where username like '%${value}%'
+    select * from User where username like concat('%', ${value}, '%')
 	</select>
 
 	<select id="findAllUser" resultType="com.windea.study.mybatis.main.day01.domain.User">
@@ -61,8 +61,8 @@
 	        resultType="com.windea.study.mybatis.main.day01.domain.ExtendedUser">
 		select *
 		from User
-		where User.username like '%${user.username}%'
-		  and User.sex = #{user.sex} ;
+    where User.username like concat('%', ${user.username}, '%')
+      and User.sex = #{user.sex} ;
 	</select>
 
 	<!--
