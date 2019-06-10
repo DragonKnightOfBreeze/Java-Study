@@ -1,8 +1,8 @@
-# Java-Study
+# 概述
 
-［Java］Java知识点学习。
+Java知识点学习。
 
-# ToDo
+# TODO
 
 - [X] 进一步学习SpringBoot框架
 - [ ] 学习SpringCloud框架
