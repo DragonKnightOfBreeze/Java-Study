@@ -70,6 +70,7 @@
           <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.3" />
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.15" />
           <element id="library" level="project" name="Maven: com.windea:java-utility-base:1.0.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:${kotlin.version}" />
         </element>
       </element>
       <element id="directory" name="META-INF">

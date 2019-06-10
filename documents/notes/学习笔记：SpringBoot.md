@@ -71,6 +71,8 @@ public class RandomPortTestRestTemplateExampleTests {
 	* 用来在测试内中模拟外部依赖，会导致测试变慢。对于外部依赖，最好在配置层完成模拟，并配置不同的Profile。
 	* 当需要注入用户自定义的bean时可以使用`@MockBean`。
 * `@MockBean`和`@SpyBean`
-	* `@Mockbean`是全新的对象，与正式对象没有关系，而`@SpyBean`与正式对象紧密联系，可以模拟部分方法。
+	* `@MockBean`是全新的对象，与正式对象没有关系，而`@SpyBean`与正式对象紧密联系，可以模拟部分方法。
 * `@TestWIthMockUser`
 	* 通过模拟角色进行mvc测试。此后可以使用MockMvc等进行单元测试。
+
+## Specification接口的使用以及Criteria查询的一般用法

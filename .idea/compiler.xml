@@ -13,14 +13,14 @@
         <module name="learn-spring-statemachine-main" />
         <module name="learn-hibernate-main" />
         <module name="learn-spring-demo-ssm" />
+        <module name="learn-groovy-main" />
         <module name="learn-spring-demo-ssh" />
-        <module name="SpringMvcLesson" />
         <module name="SpringLesson" />
         <module name="learn-springboot-main" />
         <module name="learn-thymeleaf-demo-base" />
         <module name="SpringMVCLesson" />
         <module name="learn-spring-main" />
-        <module name="learn-groovy-main" />
+        <module name="SpringMvcLesson" />
       </profile>
     </annotationProcessing>
   </component>
@@ -31,7 +31,7 @@
       <module name="SpringMvcLesson" options="" />
       <module name="learn-mybatis" options="" />
       <module name="learn-spring-statemachine-main" options="-parameters" />
-      <module name="learn-springboot" options="-parameters" />
+      <module name="learn-springboot" options="" />
       <module name="learn-springboot-main" options="-parameters" />
     </option>
   </component>

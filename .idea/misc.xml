@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/learn-spring" />
+    <file type="web" url="file://$PROJECT_DIR$/learn-springboot/learn-springboot-main" />
     <file type="web" url="file://$PROJECT_DIR$/learn-springmvc" />
     <file type="web" url="file://$PROJECT_DIR$/learn-struts2" />
     <file type="web" url="file://$PROJECT_DIR$/learn-thymeleaf/learn-thymeleaf-demo-base" />
@@ -94,5 +95,12 @@
     <option name="strutsTilesFile" />
     <option name="strutsValidatorFiles" />
     <option name="enable" value="false" />
+  </component>
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="learn-springboot-main" />
+      </set>
+    </option>
   </component>
 </project>
