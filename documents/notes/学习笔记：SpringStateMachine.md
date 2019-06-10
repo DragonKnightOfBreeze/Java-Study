@@ -5,8 +5,8 @@
 ```java
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-    public  static  void main（String [] args）{
-        SpringApplication.run（Application .class，args）
+    public  static  void main(String [] args) {
+        SpringApplication.run(Application.class,args);
     }
 }
 ```
@@ -14,12 +14,12 @@ public class Application implements CommandLineRunner {
 添加状态和事件：
 
 ```java
-public enum{
-    SI，S1，S2
+public enum States{
+    SI, S1, S2
 }
 
 public enum Events {
-    E1，E2
+    E1, E2
 }
 ```
 
@@ -74,7 +74,7 @@ public class StateMachineConfig
 
 实施`CommandLineRunner`，autowire `StateMachine`：
 
-```java
+```
 @Autowired
 private StateMachine<States, Events> stateMachine;
 

@@ -10,7 +10,7 @@
 	* IOC
 		* 控制反转
 		* 对象的创建，不是通过new的方式实现，而是交给Spring配置创建对象
-3. SpringJavaSE/EE的一站式框架
+3. Spring JavaSE/EE的一站式框架
 	* Spring在JavaEE的三层结构中，每一层都提供了不同的解决技术
 	* web层：SpringMVC
 	* service层：Spring IOC
@@ -39,7 +39,7 @@
 第二步 创建工厂类，使用dom4j解析配置文件+反射
 ```
 public class UserFactory{
-	pubilc static UserService getService(){
+	public static UserService getService(){
 		//使用dom4j解析xml文件
 		String classPath = "...";
 		Class<?> clazz = Class.forName(classPath);
@@ -47,7 +47,6 @@ public class UserFactory{
 		return service;
 	}
 }
-
 ``` 
 
 **IOC入门案例**
@@ -219,7 +218,7 @@ public class UserFactory{
 	* 使用ioc注解开发，还需要引入context约束
 4. 在配置文件里面配置开启注解扫描
 
-```xml
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
