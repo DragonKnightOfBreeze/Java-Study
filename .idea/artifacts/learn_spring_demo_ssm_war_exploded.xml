@@ -24,9 +24,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.9" />
           <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.1.0.Alpha2" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:2.0.1.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
