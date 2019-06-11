@@ -57,5 +57,5 @@ public interface UserMapper {
 	 */
 	ExtendedUser findUserByConditions2(UserQuery query) throws Exception;
 
-
+	ExtendedUser findUserByMultiId(UserQuery query) throws Exception;
 }

@@ -25,7 +25,8 @@
 		${value}:接收输入参数的内容，如果是简单类型，其中只能使用value
 	-->
 	<select id="findUserByUsername" parameterType="string" resultType="com.windea.study.mybatis.main.day01.domain.User">
-    select * from User where username like concat('%', ${value}, '%')
+		select * from User where username like concat('%', #{value}, '%')
+		-- select * from User where username like '%${value}%'
 	</select>
 
 	<select id="findAllUser" resultType="com.windea.study.mybatis.main.day01.domain.User">
@@ -61,8 +62,8 @@
 	        resultType="com.windea.study.mybatis.main.day01.domain.ExtendedUser">
 		select *
 		from User
-    where User.username like concat('%', ${user.username}, '%')
-      and User.sex = #{user.sex} ;
+		where User.username like concat('%', #{user.username}, '%')
+			and User.sex = #{user.sex} ;
 	</select>
 
 	<!--
@@ -105,7 +106,7 @@
 	<sql id="query_user_where">
 		<if test="user != null">
 			<if test="user.username != null and user.username != ''">
-				and user.username like '%${user.username}%'
+				and user.username like concat('%',#{user.username},'%')
 			</if>
 			<if test="user.sex != null and user.sex != ''">
 				and user.sex = #{user.sex} ;

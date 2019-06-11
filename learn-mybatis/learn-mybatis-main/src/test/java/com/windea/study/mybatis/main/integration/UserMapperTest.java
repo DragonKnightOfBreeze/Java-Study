@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Map;
+
 class UserMapperTest {
 	private static AnnotationConfigApplicationContext context;
 
@@ -21,5 +23,10 @@ class UserMapperTest {
 		UserMapper mapper = (UserMapper) context.getBean("userMapper");
 		var user = mapper.findUserById(5);
 		System.out.println(user);
+	}
+
+	@Test
+	void test1() {
+		var map1 = Map.of("k1", "v1", "k2", "v2");
 	}
 }
