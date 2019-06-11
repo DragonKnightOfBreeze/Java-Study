@@ -1,7 +1,7 @@
 package com.windea.study.springboot.main.service.impl;
 
 import com.windea.study.springboot.main.domain.Weapon;
-import com.windea.study.springboot.main.domain.WeaponQueryVoKt;
+import com.windea.study.springboot.main.domain.WeaponQueryVo;
 import com.windea.study.springboot.main.repository.WeaponRepository;
 import com.windea.study.springboot.main.service.WeaponService;
 import org.springframework.stereotype.Service;
@@ -44,7 +44,7 @@ public class WeaponServiceImpl implements WeaponService {
 
 	//基于Specification接口的高级查询，以查询视图对象为参数，将其转化为Specification
 	@Override
-	public List<Weapon> queryDistinct(WeaponQueryVoKt weaponQueryVo) {
+	public List<Weapon> queryDistinct(WeaponQueryVo weaponQueryVo) {
 		return repository.queryDistinct(weaponQueryVo.toSpecification());
 	}
 }
