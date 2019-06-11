@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 //自动扫描组件（属性值：要扫描的包名，一般是action、service和dao，可能需要config）
 @ComponentScan({
-		//"windea.lesson.mybatis.integration.config",
-		"windea.lesson.mybatis.integration.service",
-		"windea.lesson.mybatis.integration.dao"
+	//"com.windea.study.mybatis.main.integration.config",
+	"com.windea.study.mybatis.main.integration.service",
+	"com.windea.study.mybatis.main.integration.dao"
 })
 //允许事务管理
 @EnableTransactionManagement

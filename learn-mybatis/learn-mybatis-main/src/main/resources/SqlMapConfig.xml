@@ -17,10 +17,10 @@
 
 	<!--<typeAliases>-->
 	<!--单个别名：-->
-	<!--<typeAlias type="windea.lesson.mybatis.day01.domain.User" alias="User"/>-->
+	<!--<typeAlias type="com.windea.study.mybatis.main.day01.domain.User" alias="User"/>-->
 	<!--批量别名：指定包名，自动扫描，自动定义别名（将类的首字母大写或小写）-->
-	<!--<package name="windea.lesson.mybatis.day01.domain"/>-->
-	<!--<package name="windea.lesson.mybatis.day02.domain"/>-->
+	<!--<package name="com.windea.study.mybatis.main.day01.domain"/>-->
+	<!--<package name="com.windea.study.mybatis.main.day02.domain"/>-->
 	<!--</typeAliases>-->
 
 	<!--<typeHandlers>-->
@@ -44,8 +44,8 @@
 
 	<!--加载映射文件-->
 	<mappers>
-		<mapper resource="windea/lesson/mybatis/day01/sqlmap/User.xml"/>
-		<package name="windea.lesson.mybatis.day01.mapper"/>
-		<package name="windea.lesson.mybatis.day02.mapper"/>
+		<mapper resource="com/windea/study/mybatis/main/day01/sqlmap/User.xml"/>
+		<package name="com.windea.study.mybatis.main.day01.mapper"/>
+		<package name="com.windea.study.mybatis.main.day02.mapper"/>
 	</mappers>
 </configuration>

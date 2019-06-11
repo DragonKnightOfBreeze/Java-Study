@@ -10,14 +10,12 @@ class WeaponQueryVoKt constructor(
 	val categories: Set<String>,
 	val tags: Set<String>
 ) : Serializable {
-	fun toSpecification(): Specification<Weapon> {
-		return Specification { root, _, builder ->
-			builder.and(
-				builder.equal(root.get<String>("name"), this.name),
-				builder.like(root.get<String>("name"), this.keyword),
-				root.get<String>("category").`in`(this.categories),
-				builder.equal(root.get<String>("tags"), this.tags)
-			)
-		}
+	fun toSpecification() = Specification<String> { root, _, builder ->
+		builder.and(
+			builder.equal(root.get<String>("name"), this.name),
+			builder.like(root.get<String>("name"), this.keyword),
+			builder.`in`(root.get<String>("category")).`in`(this.categories),
+			builder.equal(root.get<String>("tags"), this.tags)
+		)
 	}
 }

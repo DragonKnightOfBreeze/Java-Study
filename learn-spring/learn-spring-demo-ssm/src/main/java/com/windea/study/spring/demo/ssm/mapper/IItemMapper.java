@@ -9,9 +9,9 @@ import java.util.List;
 
 @Mapper
 public interface IItemMapper {
-	void insert(Item item);
+	void insert(@Param("item") Item item);
 
-	void updateById(@Param("id") Integer id, Item item);
+	void updateById(@Param("id") Integer id, @Param("item") Item item);
 
 	void deleteById(@Param("id") Integer id);
 

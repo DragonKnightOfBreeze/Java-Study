@@ -49,13 +49,11 @@ public class WeaponQueryVo implements Serializable {
 		// root.name like this.field &&
 		// root.category in this.categories &&
 		// root.tags = this.tags
-		return (root, query, builder) ->
-			builder.and(
-				builder.equal(root.get("name"), this.name),
-				builder.like(root.get("name"), this.keyword),
-				root.get("category").in(this.categories),
-				builder.equal(root.get("tags"), this.tags)
-			);
-
+		return (root, query, builder) -> builder.and(
+			builder.equal(root.get("name"), this.name),
+			builder.like(root.get("name"), this.keyword),
+			builder.in(root.get("name")).in(this.categories),
+			builder.equal(root.get("tags"), this.tags)
+		);
 	}
 }

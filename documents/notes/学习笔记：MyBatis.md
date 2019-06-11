@@ -204,6 +204,8 @@ MyBatis现在托管在[github](https://github.com/mybatis/mybatis-3/release)。
 		
 ## MyBatis配置文件SqlMapConfig.xml
 
+**注意：**配置文件的属性是顺序的。
+
 **properties（属性）**
 
 * 需求：  
@@ -248,9 +250,9 @@ MyBatis现在托管在[github](https://github.com/mybatis/mybatis-3/release)。
 ```xml
 <typeAliases>
 	<!--单个别名：-->
-	<typeAlias type="windea.lesson.mybatis.day01.domain.User" alias="user"/>
-	<!--批量别名：指定包名，自动扫描，自动定义别名（将类的首字母大写或小写）-->
-	<package name="windea.lesson.mybatis.day01.domain"/>
+	<typeAlias type="com.windea.study.mybatis.main.day01.domain.User" alias="user"/>
+	<!--批量别名：指定包名，自动扫描，自动定义别名-->
+	<package name="com.windea.study.mybatis.main.day01.domain"/>
 </typeAliases>
 ```
 
@@ -287,13 +289,13 @@ MyBatis现在托管在[github](https://github.com/mybatis/mybatis-3/release)。
 	* 遵循规范：将mapper接口类名和mapper.xml映射文件名称保持一致，且在同一目录中。
 	* 前提是使用mapper代理的方法。
 * 批量加载
-	* 使用package子标签
+	* 使用package子标签。
 
 ```xml
 	<mappers>
-		<mapper resource="windea/lesson/mybatis/day01/sqlmap/User.xml"/>
-		<mapper resource="windea/lesson/mybatis/day01/mapper/UserMapper.xml"/>
-		<package name="windea.lesson.mybatis.day01.mapper"/>
+		<mapper resource="com/windea/study/mybatis/main/day01/sqlmap/User.xml"/>
+		<mapper resource="com/windea/study/mybatis/main/day01/mapper/UserMapper.xml"/>
+		<package name="com.windea.study.mybatis.main.day01.mapper"/>
 	</mappers>
 ```
 
@@ -312,8 +314,8 @@ MyBatis现在托管在[github](https://github.com/mybatis/mybatis-3/release)。
 ```xml
 	<!--用户信息的综合查询-->
 	<select id="findUserByConditions"
-	        parameterType="windea.lesson.mybatis.day01.domain.view.UserQuery"
-	        resultType="windea.lesson.mybatis.day01.domain.ExtendedUser">
+	        parameterType="com.windea.study.mybatis.main.day01.domain.view.UserQuery"
+	        resultType="com.windea.study.mybatis.main.day01.domain.ExtendedUser">
 		select * from user
 		where user.username like '%${user.username}%'
 		  and user.sex = #{user.sex} ;
@@ -342,7 +344,7 @@ MyBatis现在托管在[github](https://github.com/mybatis/mybatis-3/release)。
 		id：resultMap的唯一标志 type：最终映射成的对象类型
 		id：对表的主键对应的列的映射 result：对普通列的映射
 	-->
-	<resultMap id="userResultMap" type="windea.lesson.mybatis.day01.domain.User">
+	<resultMap id="userResultMap" type="com.windea.study.mybatis.main.day01.domain.User">
 		<id column="_id" property="id"/>
 		<result column="_username" property="username"/>
 	</resultMap>
@@ -371,8 +373,8 @@ MyBatis现在托管在[github](https://github.com/mybatis/mybatis-3/release)。
 	<!--动态sql-->
 	<!--where标签：可以自动去掉条件中的第一个and-->
 	<select id="findUserByConditions2"
-	        parameterType="windea.lesson.mybatis.day01.domain.view.UserQuery"
-	        resultType="windea.lesson.mybatis.day01.domain.ExtendedUser">
+	        parameterType="com.windea.study.mybatis.main.day01.domain.view.UserQuery"
+	        resultType="com.windea.study.mybatis.main.day01.domain.ExtendedUser">
 		select * from user
 		<where>
 			<if test="user != null">
@@ -761,8 +763,8 @@ sqlSession查询到数据时，**当关闭sqlSession后**，会将数据存储�
 **cache标签的属性**
 
 * flushInterval：刷新间隔，可以设为任意的正整数，默认只在调用语句时刷新。
-* size：引用树木，可以设为任意的正整数，默认为1024。
-* readOnly：手否只读。只读缓存不能被修改，提供了性能优势，可读写缓存会通过序列化返回缓存对象的拷贝，更慢但更安全。默认为false。
+* size：引用数目，可以设为任意的正整数，默认为1024。
+* readOnly：只读。只读缓存不能被修改，提供了性能优势，可读写缓存会通过序列化返回缓存对象的拷贝，更慢但更安全。默认为false。
 * eviction：回收策略，可设为LRU（最少使用移除），FIFO（先进先出）等。
 
 ## MyBatis整合ehcache
@@ -805,7 +807,7 @@ MyBatis二级缓存对细粒度的数据级别的缓存实现不好，比如如�
 **整合思路**
 
 * 需要spring通过单例方式管理sqlSessionFactory。
-* Spring和MyBatis整合生成代理对戏，使用sqlSessionFactory创建sqlSession。
+* Spring和MyBatis整合生成代理对象，使用sqlSessionFactory创建sqlSession。
 * 持久层的mapper、dao都需要由Spring进行管理。
 
 **整合环境**
@@ -844,7 +846,7 @@ MyBatis二级缓存对细粒度的数据级别的缓存实现不好，比如如�
 ```xml
 <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 	<property name="sqlSessionFactory" value="sqlSessionFactory"/>
-	<property name="mapperInterface" value="windea.lesson.mybatis.integration.mapper.UserMapper"/>
+	<property name="mapperInterface" value="com.windea.study.mybatis.main.integration.mapper.UserMapper"/>
 </bean>
 ```
 
@@ -919,7 +921,7 @@ MyBatis需要程序员自己编写sql语句，MyBatis已经提供了逆向工程
 	* 构造方法自动注入
 	* 简单mapper名称，如`mapper`
 	* 更长的mapper名称，如`userMapper`
-	
+
 对Statement的ParamName（即`@Param`注解的参数值）进行重构（重命名）。
 
 可以选择是否在dao层、service层不处理异常（`throws Exception`）。且自动识别上一层是否抛出了（全部即可）异常。

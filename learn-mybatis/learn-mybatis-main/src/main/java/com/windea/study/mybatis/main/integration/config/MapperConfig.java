@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 //可以使用@MapperScan注解替代
 @MapperScan(
-		basePackages = "windea.lesson.mybatis.integration.mapper",
-		sqlSessionFactoryRef = "sqlSessionFactory"
+	basePackages = "com.windea.study.mybatis.main.integration.mapper",
+	sqlSessionFactoryRef = "sqlSessionFactory"
 )
 public class MapperConfig {
 	///**
@@ -19,7 +19,7 @@ public class MapperConfig {
 	//public MapperScannerConfigurer mapperScannerConfigurer() throws Exception {
 	//	var scanner = new MapperScannerConfigurer();
 	//	scanner.setSqlSessionFactoryBeanName("sqlSessionFactory");
-	//	scanner.setBasePackage("windea.lesson.mybatis.integration.mapper");
+	//	scanner.setBasePackage("com.windea.study.mybatis.main.integration.mapper");
 	//	return scanner;
 	//}
 }

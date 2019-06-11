@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.windea.study.spring.demo.ssm.com.windea.study.springmvc.main.mapper.IItemMapper">
+<mapper namespace="com.windea.study.spring.demo.ssm.mapper.IItemMapper">
 
 	<sql id="Base_Column_List">
 			id,
@@ -11,6 +11,7 @@
 			imageUrl,
 			createTime
 	</sql>
+
 
 	<resultMap id="BaseResultMap" type="com.windea.study.spring.demo.ssm.domain.Item">
 		<result column="id" property="id"/>
@@ -22,9 +23,13 @@
 	</resultMap>
 
 
-	<insert id="insert" parameterType="com.windea.study.spring.demo.ssm.domain.Item">
+	<insert id="insert">
 		insert into Item
-		set name=#{name}, price=#{price}, detail=#{detail}, imageUrl=#{imageUrl}, createTime=#{createTime}
+		set name=#{item.name},
+		    price=#{item.price},
+		    detail=#{item.detail},
+		    imageUrl=#{item.imageUrl},
+		    createTime=#{item.createTime}
 	</insert>
 
 	<delete id="deleteById">
@@ -64,7 +69,11 @@
 
 	<update id="updateById">
 		update Item
-		set `name`=#{name}, price=#{price}, detail=#{detail}, imageUrl=#{imageUrl}, createTime=#{createTime}
+		set name=#{item.name},
+		    price=#{item.price},
+		    detail=#{item.detail},
+		    imageUrl=#{item.imageUrl},
+		    createTime=#{item.createTime}
 		where id = #{id}
 	</update>
 </mapper>

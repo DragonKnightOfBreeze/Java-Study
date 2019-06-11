@@ -1,6 +1,7 @@
 package com.windea.study.mybatis.main.day01.dao;
 
 import com.windea.study.mybatis.main.day01.domain.User;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.util.List;
@@ -29,7 +30,10 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> findAllUser() throws Exception {
 		try(var sqlSession = sessionFactory.openSession()) {
-			return sqlSession.selectList("test.findAllUser");
+			//查询所有
+			//return sqlSession.selectList("test.findAllUser");
+			//分页
+			return sqlSession.selectList("test.findAllUser", new RowBounds(0, 10));
 		}
 	}
 
