@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/learn-spring" />
+    <file type="web" url="file://$PROJECT_DIR$/learn-springboot/learn-springboot-demo-ssm" />
     <file type="web" url="file://$PROJECT_DIR$/learn-springboot/learn-springboot-main" />
     <file type="web" url="file://$PROJECT_DIR$/learn-springmvc" />
     <file type="web" url="file://$PROJECT_DIR$/learn-struts2" />
@@ -19,6 +20,7 @@
         <option value="$PROJECT_DIR$/learn-spring-state-machine/pom.xml" />
         <option value="$PROJECT_DIR$/learn-springboot/pom.xml" />
         <option value="$PROJECT_DIR$/learn-spring-statemachine/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-springboot/learn-springboot-demo-ssm/pom.xml" />
       </list>
     </option>
   </component>

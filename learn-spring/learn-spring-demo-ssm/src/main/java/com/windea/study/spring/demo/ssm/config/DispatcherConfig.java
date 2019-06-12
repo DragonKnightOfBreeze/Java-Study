@@ -20,6 +20,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * SpringMVC的配置类
@@ -52,7 +53,6 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 	@Bean
 	public MessageSource validationMessageSource() {
 		var messageSource = new ReloadableResourceBundleMessageSource();
-		//配置校验信息的属性文件
 		messageSource.setBasenames("message/validation/validationMessages");
 		messageSource.setDefaultEncoding("UTF-8");
 		messageSource.setCacheSeconds(120);
@@ -98,7 +98,8 @@ public class DispatcherConfig extends WebMvcConfigurationSupport {
 		var multipartResolver = new CommonsMultipartResolver();
 		//设置编码和缓存目录
 		multipartResolver.setDefaultEncoding("UTF-8");
-		multipartResolver.setUploadTempDir(new ServletContextResource(getServletContext(), "/temp"));
+		var context = Objects.requireNonNull(getServletContext());
+		multipartResolver.setUploadTempDir(new ServletContextResource(context, "/temp"));
 		//必须要配置以下两项
 		multipartResolver.setMaxInMemorySize(30 * 1024 * 1024);
 		multipartResolver.setMaxUploadSizePerFile(3 * 1024 * 1024);
