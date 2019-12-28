@@ -3,7 +3,6 @@
 变量允许我们单独定义一系列通用的样式，然后在需要的时候去调用。所以在做全局样式调整的时候我们可能只需要修改几行代码就可以了。
 
 ```less
-// LESS
 @color: #4D926F;
 
 #header {
@@ -13,6 +12,7 @@ h2 {
   color: @color;
 }
 ```
+
 ```css
 /* 生成的 CSS */
 
@@ -43,6 +43,7 @@ h2 {
   .rounded-corners(10px);
 }
 ```
+
 ```css
 /* 生成的 CSS */
 #header {
@@ -75,6 +76,7 @@ h2 {
   }
 }
 ```
+
 ```css
 /* 生成的 CSS */
 #header h1 {
@@ -98,7 +100,7 @@ h2 {
 
 ```less
 // LESS
-@the-border: 1px;
+@the-bounder: 1px;
 @base-color: #111;
 @red:        #842210;
 
@@ -112,6 +114,7 @@ h2 {
   border-color: desaturate(@red, 10%);
 }
 ```
+
 ```css
 /* 生成的 CSS */
 #header {
@@ -155,6 +158,7 @@ h2 {
 ## 使用
 
 只要安装了 LESS，就可以在Node中像这样调用编译器:
+
 ```js
 var less = require('less');
 
@@ -164,6 +168,7 @@ less.render('.class { width: 1 + 1 }', function (e, css) {
 ```
 
 上面会输出
+
 ```
 .class {
   width: 2;
@@ -171,6 +176,7 @@ less.render('.class { width: 1 + 1 }', function (e, css) {
 ```
 
 你也可以手动调用解析器和编译器:
+
 ```js
 var parser = new(less.Parser);
 
@@ -183,6 +189,7 @@ parser.parse('.class { width: 1 + 1 }', function (err, tree) {
 ## 配置
 
 你可以向解析器传递参数:
+
 ```js
 var parser = new(less.Parser)({
     paths: ['.', './lib'], // Specify search paths for @import directives

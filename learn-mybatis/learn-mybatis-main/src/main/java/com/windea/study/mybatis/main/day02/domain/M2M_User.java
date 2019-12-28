@@ -1,7 +1,5 @@
 package com.windea.study.mybatis.main.day02.domain;
 
-import com.windea.utility.base.ext.ObjectExt;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -67,21 +65,6 @@ public class M2M_User implements Serializable {
 
 	public void setOrderList(List<M2M_Order> orderList) {
 		this.orderList = orderList;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return ObjectExt.objEquals(this, obj);
-	}
-
-	@Override
-	public String toString() {
-		return ObjectExt.objToString(this);
-	}
-
-	@Override
-	public int hashCode() {
-		return ObjectExt.objHashcode(this);
 	}
 }
 

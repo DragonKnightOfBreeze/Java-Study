@@ -2,7 +2,6 @@ package com.windea.study.mybatis.main.day01.domain.view;
 
 import com.windea.study.mybatis.main.day01.domain.ExtendedUser;
 import com.windea.study.mybatis.main.day01.domain.User;
-import com.windea.utility.base.ext.ObjectExt;
 
 import java.io.Serializable;
 import java.util.List;
@@ -31,20 +30,5 @@ public class UserQuery implements Serializable {
 
 	public void setIdList(List<Integer> idList) {
 		this.idList = idList;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return ObjectExt.objEquals(this, obj);
-	}
-
-	@Override
-	public String toString() {
-		return ObjectExt.objToString(this);
-	}
-
-	@Override
-	public int hashCode() {
-		return ObjectExt.objHashcode(this);
 	}
 }

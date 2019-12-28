@@ -1,7 +1,6 @@
 package com.windea.study.springmvc.main.domain;
 
 import com.windea.study.springmvc.main.validation.ValidationGroup1;
-import com.windea.utility.base.ext.ObjectExt;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -72,21 +71,6 @@ public class Item implements Serializable {
 
 	public void setCreateTime(LocalDateTime createTime) {
 		this.createTime = createTime;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return ObjectExt.objEquals(this, obj);
-	}
-
-	@Override
-	public String toString() {
-		return ObjectExt.objToString(this);
-	}
-
-	@Override
-	public int hashCode() {
-		return ObjectExt.objHashcode(this);
 	}
 }
 

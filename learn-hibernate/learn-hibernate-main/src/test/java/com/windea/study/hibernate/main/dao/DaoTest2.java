@@ -1,7 +1,6 @@
 package com.windea.study.hibernate.main.dao;
 
 import com.windea.study.hibernate.main.domain.*;
-import com.windea.utility.base.annotation.Tested;
 import com.windea.utility.utils.hibernate.HibernateUtils;
 import org.junit.jupiter.api.Test;
 
@@ -53,7 +52,6 @@ public class DaoTest2 {
 	}
 
 	@Test
-	@Tested(condition = "cascade = CascadeType.ALL")
 	void testMtmAdd() {
 		//NOTE 如果使用注解，必须指明cascade = CascadeType.ALL才能通过测试
 		//NOTE 如果指明cascade = CascadeType.PERSIST|MERGE，必须首先保存role
@@ -70,7 +68,6 @@ public class DaoTest2 {
 	}
 
 	@Test
-	@Tested
 	void testMtmAdd2() {
 		HibernateUtils.doTransaction(session -> {
 			var user1 = new User2("张三", "123");

@@ -1,7 +1,5 @@
 package com.windea.study.mybatis.main.day02.domain;
 
-import com.windea.utility.base.ext.ObjectExt;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -65,21 +63,6 @@ public class O2O_Order implements Serializable {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return ObjectExt.objEquals(this, obj);
-	}
-
-	@Override
-	public String toString() {
-		return ObjectExt.objToString(this);
-	}
-
-	@Override
-	public int hashCode() {
-		return ObjectExt.objHashcode(this);
 	}
 }
 

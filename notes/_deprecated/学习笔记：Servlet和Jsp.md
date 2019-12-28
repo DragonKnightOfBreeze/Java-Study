@@ -10,37 +10,37 @@
 6. 在运行/调试配置中配置Tomcat服务器，包括tomcat路径、http端口、要打开的浏览器等
 7. 注意：添加servlet-api.jar、tomcat-api.jar、catalina.jar到外部库
 8. 注意：检查项目的Artifact，如果没有，则需要从模块创建（Web Application:Exploded/Achieve），以生成war包。
-	* （war包可以在构建好项目后，在out目录下找到。本地只需要Exploded包）
+   * （war包可以在构建好项目后，在out目录下找到。本地只需要Exploded包）
 9. 注意：在服务器启动前构建构件，添加刚才的war包；在服务器的部署（Deployment）中，也要添加刚才的war包。
 
 **实现欢迎页、Servlet**
 
 8. 在web目录下编辑index.html或index.asp，编译好后将class文件放到web/WEB-INF/classes目录下。
-	* （class文件可以在构建好项目后，在out目录下找到）
+   * （class文件可以在构建好项目后，在out目录下找到）
 9. 在src文件夹中新建java类，继承自servlet相关的类和接口(`GenericServlet`,`HttpServlet`)，重载实现相关方法。
 10. 编辑web/WEB-INF目录下的web.xml文件，指定servlet映射和欢迎页，示例如下。
 
 ```
-    <servlet>
-        <!--Servlet名称-->
-        <servlet-name>HelloWorld</servlet-name>
-        <!--完整的类名-->
-        <servlet-class>tests.part6_servlet.HelloWorld</servlet-class>
-    </servlet>
+<servlet>
+    <!--Servlet名称-->
+    <servlet-name>HelloWorld</servlet-name>
+    <!--完整的类名-->
+    <servlet-class>tests.part6_servlet.HelloWorld</servlet-class>
+</servlet>
 
-    <servlet-mapping>
-        <!--Servlet名称-->
-        <servlet-name>HelloWorld</servlet-name>
-        <!--对外访问的虚拟路径-->
-        <url-pattern>/hello-world</url-pattern>
-    </servlet-mapping>
+<servlet-mapping>
+    <!--Servlet名称-->
+    <servlet-name>HelloWorld</servlet-name>
+    <!--对外访问的虚拟路径-->
+    <url-pattern>/hello-world</url-pattern>
+</servlet-mapping>
 
-    <!--首页列表-->
-    <welcome-file-list>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list>
+<!--首页列表-->
+<welcome-file-list>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
+</welcome-file-list>
 ```
 
 **后续工作
@@ -57,6 +57,7 @@
 在servlet元素中加上一个load-on-startup子元素，其中的值为正数，表示优先级。
 
 设置初始化参数（在Servlet标签里面，每个init-param标签只能写一对）
+
 ```xml
 <init-param>
 	<param-name>encoding</param-name>

@@ -1,7 +1,5 @@
 package com.windea.study.mybatis.main.day01.domain;
 
-import com.windea.utility.base.ext.ObjectExt;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -56,20 +54,5 @@ public class User implements Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return ObjectExt.objEquals(this, obj);
-	}
-
-	@Override
-	public String toString() {
-		return ObjectExt.objToString(this);
-	}
-
-	@Override
-	public int hashCode() {
-		return ObjectExt.objHashcode(this);
 	}
 }

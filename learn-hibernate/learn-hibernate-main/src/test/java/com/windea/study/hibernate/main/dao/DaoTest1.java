@@ -1,7 +1,6 @@
 package com.windea.study.hibernate.main.dao;
 
 import com.windea.study.hibernate.main.domain.User;
-import com.windea.utility.base.annotation.Tested;
 import com.windea.utility.utils.hibernate.HibernateUtils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,7 +11,6 @@ import java.util.List;
 
 class DaoTest1 {
 	@Test
-	@Tested
 	void testAdd() {
 		//STEP 1. 加载hibernate核心配置文件
 		var cfg = new Configuration();
@@ -45,7 +43,6 @@ class DaoTest1 {
 	}
 
 	@Test
-	@Tested
 	void testUpdate() {
 		//STEP 1. 加载hibernate核心配置文件
 		var cfg = new Configuration();
@@ -76,7 +73,6 @@ class DaoTest1 {
 
 
 	@Test
-	@Tested
 	void testAdd2() {
 		HibernateUtils.doTransaction(session -> {
 			var user = new User();
@@ -88,7 +84,6 @@ class DaoTest1 {
 	}
 
 	@Test
-	@Tested
 	void testUpdate2() {
 		HibernateUtils.doTransaction(session -> {
 			var user = session.get(User.class, 1);
@@ -100,7 +95,7 @@ class DaoTest1 {
 	@Test
 	void testQuery1() {
 		var list = HibernateUtils.doTransaction(session -> {
-			return session.createQuery("from com.windea.study.hibernate.domain.User", User.class).list();
+			return session.createQuery("from com.windea.study.hibernate.main.domain.User", User.class).list();
 		});
 
 		list.forEach(System.out::println);

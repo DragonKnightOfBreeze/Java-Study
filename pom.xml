@@ -10,36 +10,36 @@
 	<version>1.0.0</version>
 
 	<modules>
-		<module>learn-springmvc</module>
-		<module>learn-spring</module>
-		<module>learn-mybatis</module>
-		<module>learn-hibernate</module>
-		<module>learn-struts2</module>
-		<module>learn-thymeleaf</module>
     <module>learn-groovy</module>
+    <module>learn-hibernate</module>
+    <module>learn-mybatis</module>
     <module>learn-scala</module>
-	</modules>
+    <module>learn-spring</module>
+    <module>learn-springmvc</module>
+    <module>learn-struts2</module>
+    <module>learn-thymeleaf</module>
+  </modules>
 
-	<name>Java Study</name>
-	<description>Java知识点学习。</description>
-	<url>https://github.com/DragonKnightOfBreeze/Java-Study</url>
+  <name>Java-Study</name>
+  <description>Java知识点学习。</description>
+  <url>https://github.com/DragonKnightOfBreeze/Java-Study</url>
 
-	<scm>
-		<connection>scm:git@github.com:DragonKnightOfBreeze/Java-Study.git</connection>
-		<developerConnection>scm:git@github.com:DragonKnightOfBreeze/Java-Study.git</developerConnection>
-		<url>git@github.com:DragonKnightOfBreeze/Java-Study.git</url>
-	</scm>
+  <scm>
+    <connection>scm:git@github.com:DragonKnightOfBreeze/Java-Study.git</connection>
+    <developerConnection>scm:git@github.com:DragonKnightOfBreeze/Java-Study.git</developerConnection>
+    <url>git@github.com:DragonKnightOfBreeze/Java-Study.git</url>
+  </scm>
 
-	<properties>
+  <properties>
     <java.version>11</java.version>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
 
-		<spring.version>5.1.6.RELEASE</spring.version>
-		<mybatis.version>3.5.0</mybatis.version>
-		<struts2.version>2.5.20</struts2.version>
-		<hibernate.version>5.4.0.Final</hibernate.version>
-	</properties>
+    <spring.version>5.1.9.RELEASE</spring.version>
+    <mybatis.version>3.5.2</mybatis.version>
+    <struts2.version>2.5.20</struts2.version>
+    <hibernate.version>5.4.0.Final</hibernate.version>
+  </properties>
 
 	<dependencies>
 		<!--基本依赖-->
@@ -88,13 +88,6 @@
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.4.0-RC1</version>
 			<scope>test</scope>
-		</dependency>
-
-		<!--自定义依赖-->
-		<dependency>
-			<groupId>com.windea</groupId>
-			<artifactId>java-utility-base</artifactId>
-			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

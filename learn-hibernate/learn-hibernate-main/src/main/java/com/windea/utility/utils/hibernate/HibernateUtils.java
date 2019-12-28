@@ -6,7 +6,6 @@
 package com.windea.utility.utils.hibernate;
 
 import com.windea.study.hibernate.main.domain.*;
-import com.windea.utility.base.annotation.Outlook;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.*;
@@ -24,7 +23,6 @@ import java.util.function.Function;
 /**
  * Hibernate的工具类
  */
-@Deprecated
 public class HibernateUtils {
 	private static final String INTERCEPTOR_CLASS = "hibernate.utils.interceptor_class";
 	private static Log log = LogFactory.getLog(HibernateUtils.class);
@@ -157,7 +155,6 @@ public class HibernateUtils {
 	 * 执行一个事务。
 	 * @param handler 事务操作的lambda session->void
 	 */
-	@Outlook(from = "spring")
 	public static void doTransaction(@NotNull Consumer<Session> handler) {
 		//得到与本地线程绑定的session
 		var session = sessionFactory.getCurrentSession();
@@ -176,7 +173,6 @@ public class HibernateUtils {
 	 * 执行一个事务。
 	 * @param handler 事务操作的lambda session->T
 	 */
-	@Outlook(from = "spring")
 	public static <T> T doTransaction(@NotNull Function<Session, T> handler) {
 		T result = null;
 		//得到与本地线程绑定的session
@@ -197,7 +193,6 @@ public class HibernateUtils {
 	 * 执行多个事务。
 	 * @param handlers 多个事务操作的lambda session->void
 	 */
-	@Outlook(from = "spring")
 	@SafeVarargs
 	public static void doTransactions(@NotNull Consumer<Session>... handlers) {
 		//得到与本地线程绑定国度session
@@ -219,7 +214,6 @@ public class HibernateUtils {
 	 * 执行多个事务。
 	 * @param handlers 多个事务操作的lambda session->List&lt;Object&gt;
 	 */
-	@Outlook(from = "spring")
 	@SafeVarargs
 	@NotNull
 	public static List doTransactions(@NotNull Function<Session, Object>... handlers) {
